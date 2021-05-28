@@ -29,6 +29,7 @@
 	<div class="collapse navbar-collapse" id="myNavbar">
 		<ul class="nav navbar-nav">
 			<li><a href="<c:url value="/"/>">Home</a></li>
+			<li><a href="<c:url value="/objective/list"/>">Tasks</a></li>
 <%--			<li><a href="<c:url value="/calendar"/>">Calendar</a></li>--%>
 <%--			<li><a href="<c:url value="/patient/view"/>">Patients</a></li>--%>
 <%--			<li><a href="<c:url value="/service"/>">Services</a></li>--%>
