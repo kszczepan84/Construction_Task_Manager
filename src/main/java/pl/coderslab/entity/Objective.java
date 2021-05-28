@@ -11,7 +11,7 @@ import java.time.LocalTime;
 
 @Entity
 @Data
-public class UserTask {
+public class Objective {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,8 +23,6 @@ public class UserTask {
     private LocalDate endDate;
     private LocalTime startHour;
     private LocalTime endHour;
-
-
 
     public Long getId() {
         return id;
@@ -48,6 +46,14 @@ public class UserTask {
 
     public void setPriority(String priority) {
         this.priority = priority;
+    }
+
+    public boolean isTaskStatus() {
+        return taskStatus;
+    }
+
+    public void setTaskStatus(boolean taskStatus) {
+        this.taskStatus = taskStatus;
     }
 
     public String getDescription() {
@@ -88,28 +94,5 @@ public class UserTask {
 
     public void setEndHour(LocalTime endHour) {
         this.endHour = endHour;
-    }
-
-    public boolean isTaskStatus() {
-        return taskStatus;
-    }
-
-    public void setTaskStatus(boolean taskStatus) {
-        this.taskStatus = taskStatus;
-    }
-
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", priority='" + priority + '\'' +
-                ", taskStatus=" + taskStatus +
-                ", description='" + description + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", startHour=" + startHour +
-                ", endHour=" + endHour +
-                '}';
     }
 }

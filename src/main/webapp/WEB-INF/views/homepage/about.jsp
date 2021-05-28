@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<c:import url="header2.jsp"></c:import>
+<c:import url="header.jsp"></c:import>
 
 <section class="padding-medium story bg-light" id="about">
     <div class="container d-flex justify-content-center align-items-center">
@@ -25,8 +25,8 @@
             </div>
 
             <div class="col-7 ml-4">
-                <h1 class="pb-1">Lorem ipsum dolor sit amet</h1>
-                <p>Program do zarzadzania pracownikami na inwestrycji drogowej.
+                <h1 class="pb-1">Program do zarzadzania pracownikami na inwestycji drogowej.</h1>
+                <p> costam costam
                 </p>
             </div>
         </div>

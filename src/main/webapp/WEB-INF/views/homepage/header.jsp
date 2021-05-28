@@ -32,7 +32,8 @@
 <%--			<li><a href="<c:url value="/calendar"/>">Calendar</a></li>--%>
 <%--			<li><a href="<c:url value="/patient/view"/>">Patients</a></li>--%>
 <%--			<li><a href="<c:url value="/service"/>">Services</a></li>--%>
-			<li><a href="<c:url value="/admin/list"/>">Admin Site</a></li>
+			<li><a href="<c:url value="/admin/list"/>">Manager Site</a></li>
+			<li><a href="<c:url value="/about"/>">About</a></li>
 		</ul>
 	<!-- 	<ul class="nav navbar-nav navbar-right">
 			<li><a href="#"><span class="glyphicon glyphicon-user"></span>

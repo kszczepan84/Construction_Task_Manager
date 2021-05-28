@@ -13,11 +13,11 @@
 	
 	
 </head>
-<%@	include file="header.jsp"%>
+<c:import url="header.jsp"></c:import>
 <body>
 
 <div class="jumbotron">
- 	<h2 class="text-center">Constrution Task Manager</h2>
+ 	<h2 class="text-center">Construction Task Manager</h2>
 	<p class="text-center"> kind of software</p>
 </div>
 </body>

@@ -10,13 +10,13 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home() {
-        return "index";
+        return "/homepage/index";
     }
 
 
     @RequestMapping("/about")
     public String about() {
-        return "about";
+        return "/homepage/about";
     }
 
 //    @RequestMapping("/calendar")

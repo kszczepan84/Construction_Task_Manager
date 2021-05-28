@@ -13,6 +13,7 @@
     <title>Edit employee</title>
     <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
+<c:import url="homepage/header.jsp"></c:import>
 <body>
 <form:form method="post" modelAttribute="user" action="/admin/edit">
     <form:hidden path="id" value="${id}"/>

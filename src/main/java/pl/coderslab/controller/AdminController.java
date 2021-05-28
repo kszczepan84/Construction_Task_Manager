@@ -29,7 +29,7 @@ public class AdminController {
     private final BCryptPasswordEncoder passwordEncoder;
     private final RoleRepository roleRepository;
 
-    @RequestMapping("list")
+    @RequestMapping("/list")
     public String all(Model model) {
         model.addAttribute("users", userService.getUsers());
         return "/admin/list";

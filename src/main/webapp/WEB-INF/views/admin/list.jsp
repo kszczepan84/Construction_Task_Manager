@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/style.css"/>">
     <title>Manage workers</title>
 </head>
-<%@    include file="header.jsp" %>
+<c:import url="homepage/header.jsp"></c:import>
 <body>
 <h1>Employee details</h1>
 <%--<h1><spring:message code="app.footer"/></h1>--%>
