@@ -27,7 +27,6 @@ public class AdminController {
 
     private final UserService userService;
     private final BCryptPasswordEncoder passwordEncoder;
-    private final RoleRepository roleRepository;
 
     @RequestMapping("/list")
     public String all(Model model) {

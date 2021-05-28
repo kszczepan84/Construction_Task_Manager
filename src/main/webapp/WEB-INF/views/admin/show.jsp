@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<c:url value="/style.css"/>">
     <title>Worker details</title>
 </head>
-<c:import url="homepage/header.jsp"></c:import>
+<c:import url="/WEB-INF/views/homepage/header.jsp"/>
 <body>
 <table>
     <tr>

@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<c:import url="header.jsp"></c:import>
+<c:import url="/WEB-INF/views/homepage/header.jsp"/>
 
 <section class="padding-medium story bg-light" id="about">
     <div class="container d-flex justify-content-center align-items-center">

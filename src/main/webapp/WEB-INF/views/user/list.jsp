@@ -13,8 +13,8 @@
   <title>Title</title>
 </head>
 <body>
-<h1><spring:message code="app.title"/></h1>
-<h1><spring:message code="app.footer"/></h1>
+<%--<h1><spring:message code="app.title"/></h1>--%>
+<%--<h1><spring:message code="app.footer"/></h1>--%>
 
 <table>
   <tr>
