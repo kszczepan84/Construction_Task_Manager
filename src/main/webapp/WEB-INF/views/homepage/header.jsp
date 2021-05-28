@@ -12,7 +12,7 @@
 <link rel="stylesheet"
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" type="text/css"
-	href="<c:url value="/css/style.css"/>">
+	href="<c:url value="style.css"/>">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <header> 
 	
@@ -32,6 +32,7 @@
 <%--			<li><a href="<c:url value="/calendar"/>">Calendar</a></li>--%>
 <%--			<li><a href="<c:url value="/patient/view"/>">Patients</a></li>--%>
 <%--			<li><a href="<c:url value="/service"/>">Services</a></li>--%>
+			<li><a href="<c:url value="/login"/>">User login</a></li>
 			<li><a href="<c:url value="/admin/list"/>">Manager Site</a></li>
 			<li><a href="<c:url value="/about"/>">About</a></li>
 		</ul>

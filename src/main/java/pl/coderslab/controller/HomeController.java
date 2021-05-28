@@ -19,6 +19,12 @@ public class HomeController {
         return "/homepage/about";
     }
 
+    @RequestMapping("/login")
+    public String login() {
+        return "/homepage/login";
+    }
+
+
 //    @RequestMapping("/calendar")
 //    public String index2() {
 //        return "calendar";

@@ -73,12 +73,12 @@ public class User {
     @ManyToMany
     private List<WorkArea> workAreas;
     @ManyToMany
-    private List<UserTask>userTasks;
+    private List<Objective>objectives;
 
     public User() {
     }
 
-    public User(Long id, String username, String password, String firstName, String lastName, List<String> positions, String pesel, String street, String streetNr, String houseNr, String postalCode, String phoneNr, String email, List<String> skills, String description, int enabled, Collection<Role> roles, List<WorkArea> workAreas, List<UserTask> userTasks) {
+    public User(Long id, String username, String password, String firstName, String lastName, List<String> positions, String pesel, String street, String streetNr, String houseNr, String postalCode, String phoneNr, String email, List<String> skills, String description, int enabled, Collection<Role> roles, List<WorkArea> workAreas, List<Objective> objectives) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -97,7 +97,7 @@ public class User {
         this.enabled = enabled;
         this.roles = roles;
         this.workAreas = workAreas;
-        this.userTasks = userTasks;
+        this.objectives = objectives;
     }
 
     public Long getId() {
@@ -244,11 +244,11 @@ public class User {
         this.workAreas = workAreas;
     }
 
-    public List<UserTask> getUserTasks() {
-        return userTasks;
+    public List<Objective> getObjectives() {
+        return objectives;
     }
 
-    public void setUserTasks(List<UserTask> userTasks) {
-        this.userTasks = userTasks;
+    public void setObjectives(List<Objective> objectives) {
+        this.objectives = objectives;
     }
 }
