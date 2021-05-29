@@ -74,13 +74,14 @@ public class AdminController {
         if (result.hasErrors()) {
             return "admin/edit";
         }
-        List<User> employees = userService.getUsers();
-        for (User employee : employees) {
-            if (employee.getEmail().equals(user.getEmail())) {
-                return "/errors/emailError";
-            }
-        }
+//        List<User> employees = userService.getUsers();
+//        for (User employee : employees) {
+//            if (employee.getEmail().equals(user.getEmail())) {
+//                return "/errors/emailError";
+//            }
+//        }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setEnabled(1);
         userService.update(user);
         return "redirect:/admin/list";
     }
