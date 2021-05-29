@@ -61,7 +61,7 @@
             <td>
                 <a href="<c:url value="/admin/role/set/${user.username}/ROLE_ADMIN"/>" class="href">high</a>
                 <a href="<c:url value="/admin/role/set/${user.username}/ROLE_SUPERVISOR"/>" class="href">medium</a>
-                <a href="<c:url value="/admin/role/set/${user.username}/ROLE_OPERATOR"/>" class="href">low</a>
+                <a href="<c:url value="/admin/role/set/${user.username}/ROLE_WORKER"/>" class="href">low</a>
             </td>
         </tr>
     </c:forEach>

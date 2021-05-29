@@ -62,8 +62,8 @@ public class User {
     private String description;
     private int enabled;
 
-//    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//    @ManyToMany
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(

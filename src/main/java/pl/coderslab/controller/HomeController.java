@@ -1,9 +1,11 @@
 package pl.coderslab.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("")
 public class HomeController {
 
     @RequestMapping("/")
@@ -17,29 +19,20 @@ public class HomeController {
         return "/homepage/about";
     }
 
+    @RequestMapping("/successLogin")
+    public String successLogin() {
+        return "/homepage/successLogin";
+    }
+
+//    @RequestMapping("/successLogout")
+//    public String successLogout() {
+//        return "/homepage/successLogout";
+//    }
+
+
     @RequestMapping("/login")
     public String login() {
         return "/homepage/login";
     }
 
-
-//    @RequestMapping("/calendar")
-//    public String index2() {
-//        return "calendar";
-//    }
-
-//    @RequestMapping("/calendar")
-//    public String index2() {
-//        return "calendar";
-//    }
-//
-//    @GetMapping("/patient/view")
-//    public String index3() {
-//        return "patient";
-//    }
-//
-//    @RequestMapping("/service")
-//    public String index4() {
-//        return "service";
-//    }
 }

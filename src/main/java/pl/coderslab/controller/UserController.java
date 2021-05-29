@@ -12,23 +12,21 @@ import java.util.Arrays;
 import java.util.List;
 
 @Controller
-@RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
 
-    private final UserService userService;
 
-
-    @RequestMapping("/list")
-    public String all(Model model) {
-        model.addAttribute("users", userService.getUsers());
-        return "/user/list";
+    @RequestMapping("/worker")
+    @ResponseBody
+    public String loginWorker() {
+        return "worker has logged in";
     }
 
-
-    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
-    public String login() {
-        return "admin/login";
+    @RequestMapping("/supervisor")
+    @ResponseBody
+    public String loginSupervisor() {
+        return "supervisor has logged in";
     }
+
 
 }
