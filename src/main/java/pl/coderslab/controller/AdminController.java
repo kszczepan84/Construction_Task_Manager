@@ -6,18 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.coderslab.Role;
-import pl.coderslab.RoleRepository;
 import pl.coderslab.entity.User;
-import pl.coderslab.repository.AdminRepository;
-import pl.coderslab.repository.UserRepository;
 import pl.coderslab.service.UserService;
 
-import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
 @Controller
@@ -55,29 +48,9 @@ public class AdminController {
         }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabled(1);
-//        //////////////////////////////////////////////////////////////////// TUTAJ
-//        Role userRole = roleRepository.findByName(); // TU CHCIALBYM POBRAC Z WIDOKU ( PLIK JSP ) PARAMETR KLASY NAME
-//        System.out.println(userRole.toString());
-//        if (userRole == null) {
-//            userRole = new Role();
-//            userRole.setName();
-//            roleRepository.save(userRole);
-//        }
-//        user.setRoles(Arrays.asList(userRole));
         userService.addUser(user);
         return "redirect:/admin/list";
     }
-
-
-//    @ModelAttribute("allRoles") //tutaj jest lista wszystkich ról
-//    public List<Role> getAllRoles() {
-//        List<Role> roles= new ArrayList<>();
-//        roles.add(new Role (1L,"ROLE_ADMIN"));
-//        roles.add(new Role (2L,"ROLE_SUPERVISOR"));
-//        roles.add(new Role (3L,"ROLE_OPERATOR"));
-//        return roles;
-//    }
-
 
     @ModelAttribute("skills")
     public List<String> getSkills() {

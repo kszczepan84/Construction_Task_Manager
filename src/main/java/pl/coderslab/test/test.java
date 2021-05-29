@@ -1,24 +1,28 @@
 package pl.coderslab.test;
 
-import org.springframework.web.bind.annotation.ModelAttribute;
+import lombok.RequiredArgsConstructor;
+import pl.coderslab.Role;
+import pl.coderslab.RoleRepository;
+import pl.coderslab.entity.User;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-
+@RequiredArgsConstructor
 public class test {
-    static void getNewPositions() {
-        List<String> intList = new ArrayList<String>();
-        intList.add("Manager");
-        intList.add("Supervisor");
-        intList.add("Operator");
-        intList.stream().
-                collect(Collectors.joining(" "));
-    }
 
-        public static void main (String[]args){
-            getNewPositions();
+
+
+
+
+    public static void main (String[]args){
+        List<String>users=new ArrayList<>();
+        users.add("user1");
+        users.add("user2");
+        users.add("user3");
+        System.out.println(users.toString().replace("[", "").replace("]", ""));
+
+
+
 
 
         }

@@ -35,6 +35,7 @@
         <th>description</th>
         <th>skills</th>
         <th>action</th>
+        <th>Set access level</th>
     </tr>
     <c:forEach items="${users}" var="user">
         <tr>
@@ -56,6 +57,11 @@
             <td><a href="<c:url value="/admin/show/${user.id}"/>" class="href">Show</a>
                 <a href="<c:url value="/admin/edit/${user.id}"/>">Edit</a>
                 <a href="<c:url value="/admin/delete/${user.id}"/>" onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+            <td>
+                <a href="<c:url value="/admin/role/set/${user.username}/ROLE_ADMIN"/>" class="href">high</a>
+                <a href="<c:url value="/admin/role/set/${user.username}/ROLE_SUPERVISOR"/>" class="href">medium</a>
+                <a href="<c:url value="/admin/role/set/${user.username}/ROLE_OPERATOR"/>" class="href">low</a>
             </td>
         </tr>
     </c:forEach>

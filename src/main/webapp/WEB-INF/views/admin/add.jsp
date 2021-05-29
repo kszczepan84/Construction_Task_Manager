@@ -96,23 +96,23 @@
 <%--            <th>Select access:</th>--%>
 <%--            <td>--%>
 <%--                <label>--%>
-<%--                    <form:select path="roles" items="${allRoles}" multiple="false" itemLabel="name" itemValue="name"/>--%>
+<%--                    <form:select path="roles" items="${roles.getName()}" multiple="false" itemLabel="name" itemValue="name"/>--%>
 <%--                </label>--%>
 <%--            </td>--%>
 <%--        </tr>--%>
-            <%--        <tr>--%>
-            <%--            <th>Select access:</th>--%>
-            <%--            <td>--%>
-            <%--                <label class="checkbox">--%>
-            <%--                    <form:checkbox class="radio" path="roles" value="${roles.get(0)}" label="ROLE_ADMIN"/>--%>
-            <%--                    <br>--%>
-            <%--                    <form:checkbox class="radio" path="roles" value="${roles.get(1)}" label="ROLE_SUPERVISOR"/>--%>
-            <%--                    <br>--%>
-            <%--                    <form:checkbox class="radio" path="roles" value="${roles.get(2)}" label="ROLE_OPERATOR"/>--%>
-            <%--                    <br>--%>
-            <%--                </label>--%>
-            <%--            </td>--%>
-            <%--        </tr>--%>
+<%--                    <tr>--%>
+<%--                        <th>Select access:</th>--%>
+<%--                        <td>--%>
+<%--                            <label class="checkbox">--%>
+<%--                                <form:checkbox class="radio" path="roleAdmin" value="${ROLE_ADMIN}" label="ROLE_ADMIN"/>--%>
+<%--                                <br>--%>
+<%--                                <form:checkbox class="radio" path="ROLE_SUPERVISOR" value="${ROLE_SUPERVISOR}" label="ROLE_SUPERVISOR"/>--%>
+<%--                                <br>--%>
+<%--                                <form:checkbox class="radio" path="ROLE_OPERATOR" value="${ROLE_OPERATOR}" label="ROLE_OPERATOR"/>--%>
+<%--                                <br>--%>
+                            </label>
+                        </td>
+                    </tr>
 
             <%--        <tr>--%>
             <%--            <th>Select access:</th>--%>

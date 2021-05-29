@@ -1,0 +1,4 @@
+-- # use construction_task_manager;
+-- # INSERT INTO role values (1, 'ROLE_ADMIN');
+-- # INSERT INTO role values (2, 'ROLE_SUPERVISOR');
+-- # INSERT INTO role values (3, 'ROLE_OPERATOR');
