@@ -25,14 +25,16 @@
             </div>
 
             <div class="col-7 ml-4">
-                <h1 class="pb-1">Program do zarzadzania pracownikami na inwestycji drogowej.</h1>
-                <p> costam costam
-                </p>
+                <h2 class="text-center">Software description<br>
+                    <h5 class="text-center">
+                       Here will be a short summary about software
+                    </h5>
+                </h2>
             </div>
         </div>
     </div>
 </section>
 
-<c:import url="footer.jsp"></c:import>
+
 </body>
 </html>

@@ -19,13 +19,13 @@ public class UserController {
     @RequestMapping("/worker")
     @ResponseBody
     public String loginWorker() {
-        return "worker has logged in";
+        return "worker is logged in";
     }
 
     @RequestMapping("/supervisor")
     @ResponseBody
     public String loginSupervisor() {
-        return "supervisor has logged in";
+        return "supervisor is logged in";
     }
 
 

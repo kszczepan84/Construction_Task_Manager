@@ -9,6 +9,6 @@
 //
 //    @Override
 //    public void addViewControllers(ViewControllerRegistry registry) {
-////        registry.addViewController("/l").setViewName("admin/login");
+//        registry.addViewController("/error").setViewName("errors/403");
 //    }
 //}

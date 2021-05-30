@@ -3,13 +3,11 @@
     font-style: italic;
 }
 
-hr.style-one {
-    border: 0;
-    height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
-}
-
-.jumbotron {
-    background-image: url("background.jpg");
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: #552b2b;
+    text-align: center;
 }
