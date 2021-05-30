@@ -1,8 +1,10 @@
 package pl.coderslab.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 import pl.coderslab.Role;
 import pl.coderslab.RoleRepository;
 import pl.coderslab.entity.User;
@@ -17,6 +19,7 @@ import java.util.Optional;
 @Primary
 public class JpaUserService implements UserService{
 
+    @Autowired
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final BCryptPasswordEncoder passwordEncoder;
@@ -26,6 +29,23 @@ public class JpaUserService implements UserService{
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
     }
+
+    @Override
+    public boolean fieldValueExists(Object value, String fieldName) throws UnsupportedOperationException {
+        Assert.notNull(fieldName);
+
+        if (!fieldName.equals("email")) {
+            throw new UnsupportedOperationException("Field name not supported");
+        }
+
+        if (value == null) {
+            return false;
+        }
+
+        return this.userRepository.existsByEmail(value.toString());
+
+    }
+
 
 
     @Override
@@ -67,5 +87,10 @@ public class JpaUserService implements UserService{
 //        Role userRole = roleRepository.findByName("ROLE_USER");
 //        user.setRoles(new HashSet<>(Arrays.asList(userRole)));
 //        userRepository.save(user);
+    }
+
+    @Override
+    public User findByPesel(String pesel) {
+        return null;
     }
 }

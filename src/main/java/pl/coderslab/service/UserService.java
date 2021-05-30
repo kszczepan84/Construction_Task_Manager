@@ -2,12 +2,13 @@ package pl.coderslab.service;
 
 import org.springframework.stereotype.Service;
 import pl.coderslab.entity.User;
+import pl.coderslab.validator.FieldValueExists;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public interface UserService {
+public interface UserService extends FieldValueExists {
 
     List<User> getUsers();
     void addUser(User user);
@@ -16,5 +17,6 @@ public interface UserService {
     void delete(Long id);
     User findByUserName(String name);
     void saveUser(User user);
+    User findByPesel(String pesel);
 
 }

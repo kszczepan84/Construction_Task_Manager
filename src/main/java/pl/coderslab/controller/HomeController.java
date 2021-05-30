@@ -24,11 +24,6 @@ public class HomeController {
         return "/homepage/successLogin";
     }
 
-//    @RequestMapping("/successLogout")
-//    public String successLogout() {
-//        return "/homepage/successLogout";
-//    }
-
 
     @RequestMapping("/login")
     public String login() {

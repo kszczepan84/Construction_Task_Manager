@@ -4,6 +4,10 @@ package pl.coderslab.entity;
 import lombok.Data;
 import org.hibernate.validator.constraints.pl.PESEL;
 import pl.coderslab.Role;
+import pl.coderslab.service.UserService;
+import pl.coderslab.validator.UniqueEmail;
+import pl.coderslab.validator.UniquePesel;
+import pl.coderslab.validator.UniqueUsername;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -21,10 +25,11 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true)
+    @UniqueUsername
     @NotBlank
     private String username;
     @NotBlank
-    @Pattern(regexp="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")
+    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")
     private String password;
     @Size(min = 3)
     @NotBlank
@@ -38,32 +43,33 @@ public class User {
     @ElementCollection
     private List<String> positions;
     @PESEL
+    @UniquePesel
     @Column(unique = true)
     @NotBlank
     private String pesel;
     @NotBlank
-    @Size(min=3)
+    @Size(min = 3)
     private String street;
-    @Pattern(regexp="^(0|[1-9][0-9]*)$")
+    @Pattern(regexp = "^(0|[1-9][0-9]*)$")
     @NotBlank
     private String streetNr;
-    @Pattern(regexp="^(0|[1-9][0-9]*)$")
+    @Pattern(regexp = "^(0|[1-9][0-9]*)$")
     private String houseNr;
     @Pattern(regexp = "[0-9]{2}-[0-9]{3}")
     @NotBlank
     private String postalCode;
     @Pattern(regexp = "^(0|[0-9]{9})*$")
     private String phoneNr;
-    @Column(unique = true, length = 30)
+    @UniqueEmail(service = UserService.class, fieldName = "email")
+    @Column(unique = true)
     @Email
     private String email;
     @ElementCollection
-    private List <String> skills;
+    private List<String> skills;
     private String description;
     private int enabled;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @ManyToMany
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(
@@ -74,7 +80,7 @@ public class User {
     @ManyToMany
     private List<WorkArea> workAreas;
     @ManyToMany
-    private List<Objective>objectives;
+    private List<Objective> objectives;
 
     public User() {
     }

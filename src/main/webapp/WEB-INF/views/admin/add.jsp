@@ -110,9 +110,9 @@
 <%--                                <br>--%>
 <%--                                <form:checkbox class="radio" path="ROLE_OPERATOR" value="${ROLE_OPERATOR}" label="ROLE_OPERATOR"/>--%>
 <%--                                <br>--%>
-                            </label>
-                        </td>
-                    </tr>
+<%--                            </label>--%>
+<%--                        </td>--%>
+<%--                    </tr>--%>
 
             <%--        <tr>--%>
             <%--            <th>Select access:</th>--%>
