@@ -16,6 +16,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -76,36 +77,12 @@ public class User {
                     name = "user_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "role_id", referencedColumnName = "id"))
-    private Collection<Role> roles;
+    private Set<Role> roles;
     @ManyToMany
     private List<WorkArea> workAreas;
     @ManyToMany
     private List<Objective> objectives;
 
-    public User() {
-    }
-
-    public User(Long id, String username, String password, String firstName, String lastName, List<String> positions, String pesel, String street, String streetNr, String houseNr, String postalCode, String phoneNr, String email, List<String> skills, String description, int enabled, Collection<Role> roles, List<WorkArea> workAreas, List<Objective> objectives) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.positions = positions;
-        this.pesel = pesel;
-        this.street = street;
-        this.streetNr = streetNr;
-        this.houseNr = houseNr;
-        this.postalCode = postalCode;
-        this.phoneNr = phoneNr;
-        this.email = email;
-        this.skills = skills;
-        this.description = description;
-        this.enabled = enabled;
-        this.roles = roles;
-        this.workAreas = workAreas;
-        this.objectives = objectives;
-    }
 
     public Long getId() {
         return id;
@@ -235,11 +212,11 @@ public class User {
         this.enabled = enabled;
     }
 
-    public Collection<Role> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Collection<Role> roles) {
+    public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
 

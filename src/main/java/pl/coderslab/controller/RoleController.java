@@ -12,6 +12,9 @@ import pl.coderslab.entity.User;
 import pl.coderslab.service.UserService;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Controller
 @RequestMapping("/admin/role")
@@ -31,7 +34,7 @@ public class RoleController {
             userRole.setName(roleName);
             roleRepository.save(userRole);
         }
-        user.setRoles(Arrays.asList(userRole));
+        user.setRoles(new HashSet<>(Arrays.asList(userRole)));
         return "redirect:/admin/list";
     }
 
