@@ -3,11 +3,42 @@
     font-style: italic;
 }
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: #552b2b;
-    text-align: center;
+table {
+    margin-left: 25px;
+    border-collapse: collapse;
+    width: 100%:
+
 }
+
+td, th {
+    font-size: 20px;
+    border-bottom: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+    height: 50px;
+    width: 250px;
+}
+
+.checkbox{
+    font-size: 15px;
+    vertical-align: middle;
+    horiz-align: center;
+}
+
+button:hover{
+    color: hotpink;
+}
+a:link {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: hotpink;
+}
+a:active {
+    color: blue;
+}
+
