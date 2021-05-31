@@ -3,7 +3,6 @@ package pl.coderslab.entity;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.pl.PESEL;
-import pl.coderslab.Role;
 import pl.coderslab.service.UserService;
 import pl.coderslab.validator.UniqueEmail;
 import pl.coderslab.validator.UniquePesel;
@@ -14,7 +13,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 

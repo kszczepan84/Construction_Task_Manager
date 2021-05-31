@@ -1,12 +1,9 @@
-package pl.coderslab;
+package pl.coderslab.entity;
 
 import lombok.Data;
-import pl.coderslab.entity.User;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Data

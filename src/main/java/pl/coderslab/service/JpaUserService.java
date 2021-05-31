@@ -5,13 +5,10 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
-import pl.coderslab.Role;
-import pl.coderslab.RoleRepository;
+import pl.coderslab.repository.RoleRepository;
 import pl.coderslab.entity.User;
 import pl.coderslab.repository.UserRepository;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 

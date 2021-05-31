@@ -64,10 +64,6 @@
         <td>${user.username}</td>
     </tr>
     <tr>
-        <th>password</th>
-        <td>${user.password}</td>
-    </tr>
-    <tr>
         <th>description</th>
         <td>${user.description}</td>
     </tr>

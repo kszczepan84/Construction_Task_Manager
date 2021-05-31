@@ -2,7 +2,6 @@ package pl.coderslab.service;
 
 import org.springframework.stereotype.Service;
 import pl.coderslab.entity.Objective;
-import pl.coderslab.entity.User;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,4 +15,5 @@ public interface ObjectiveService {
     void delete(Long id);
     Objective findByObjectiveName(String name);
     void saveObjective(Objective objective);
+
 }

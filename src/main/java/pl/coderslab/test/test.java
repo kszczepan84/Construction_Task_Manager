@@ -1,9 +1,6 @@
 package pl.coderslab.test;
 
 import lombok.RequiredArgsConstructor;
-import pl.coderslab.Role;
-import pl.coderslab.RoleRepository;
-import pl.coderslab.entity.User;
 
 import java.util.ArrayList;
 import java.util.List;

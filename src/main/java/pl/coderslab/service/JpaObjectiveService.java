@@ -3,7 +3,6 @@ package pl.coderslab.service;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import pl.coderslab.entity.Objective;
-import pl.coderslab.entity.User;
 import pl.coderslab.repository.ObjectiveRepository;
 
 import java.util.List;
@@ -55,10 +54,6 @@ public class JpaObjectiveService implements ObjectiveService {
 
     @Override
     public void saveObjective(Objective objective) {
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
-//        user.setEnabled(1);
-//        Role userRole = roleRepository.findByName("ROLE_USER");
-//        user.setRoles(new HashSet<>(Arrays.asList(userRole)));
-//        userRepository.save(user);
+
     }
 }

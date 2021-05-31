@@ -40,12 +40,6 @@ public class AdminController {
         if (result.hasErrors()) {
             return "admin/add";
         }
-//        List<User> employees = userService.getUsers();
-//        for (User employee : employees) {
-//            if (employee.getEmail().equals(user.getEmail())) {
-//                return "/errors/emailError";
-//            }
-//        }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabled(1);
         userService.addUser(user);
@@ -74,12 +68,6 @@ public class AdminController {
         if (result.hasErrors()) {
             return "admin/edit";
         }
-//        List<User> employees = userService.getUsers();
-//        for (User employee : employees) {
-//            if (employee.getEmail().equals(user.getEmail())) {
-//                return "/errors/emailError";
-//            }
-//        }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabled(1);
         userService.update(user);

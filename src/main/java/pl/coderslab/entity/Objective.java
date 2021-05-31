@@ -2,12 +2,10 @@ package pl.coderslab.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -16,13 +14,16 @@ public class Objective {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String priority;
-    private boolean taskStatus;
+    @ElementCollection
+    private List <String> priority;
+    @ElementCollection
+    private List <String> taskStatus;
     private String description;
     private LocalDate startDate;
     private LocalDate endDate;
     private LocalTime startHour;
     private LocalTime endHour;
+
 
     public Long getId() {
         return id;
@@ -40,19 +41,20 @@ public class Objective {
         this.name = name;
     }
 
-    public String getPriority() {
+    public List<String> getPriority() {
         return priority;
     }
 
-    public void setPriority(String priority) {
+    public void setPriority(List<String> priority) {
         this.priority = priority;
     }
 
-    public boolean isTaskStatus() {
+
+    public List<String> getTaskStatus() {
         return taskStatus;
     }
 
-    public void setTaskStatus(boolean taskStatus) {
+    public void setTaskStatus(List<String> taskStatus) {
         this.taskStatus = taskStatus;
     }
 
@@ -94,5 +96,13 @@ public class Objective {
 
     public void setEndHour(LocalTime endHour) {
         this.endHour = endHour;
+    }
+
+    @Override
+    public String toString() {
+        return "Objective{" +
+                "priority=" + priority +
+                ", taskStatus=" + taskStatus +
+                '}';
     }
 }
