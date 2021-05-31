@@ -45,7 +45,11 @@
     </tr>
     <tr>
         <th>position</th>
-        <td>${user.positions}</td>
+        <td>
+            <c:forEach items="${user.positions}" var="item" varStatus="status">
+                ${item}<c:if test="${!status.last}">,</c:if>
+            </c:forEach>
+        </td>
     </tr>
     <tr>
         <th>street</th>
@@ -69,7 +73,11 @@
     </tr>
     <tr>
         <th>skills</th>
-        <td>${user.skills}</td>
+        <td>
+            <c:forEach items="${user.skills}" var="item" varStatus="status">
+                ${item}<c:if test="${!status.last}">,</c:if>
+            </c:forEach>
+        </td>
     </tr>
     <tr>
         <th style="border: none">

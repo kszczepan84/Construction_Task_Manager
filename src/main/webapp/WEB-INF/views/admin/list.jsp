@@ -102,81 +102,89 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-8"><h2>Employees <b>List</b></h2></div>
-                    </div>
                 </div>
             </div>
-            <table class="table table-striped table-hover table-bordered">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>First name <i class="fa fa-sort"></i></th>
-                    <th>Last name</th>
-                    <th>PESEL <i class="fa fa-sort"></i></th>
-                    <th>Email</th>
-                    <th>Phone number <i class="fa fa-sort"></i></th>
-                    <th>Postal Code</th>
-                    <th>Position</th>
-                    <th>Street</th>
-                    <th>Street Number</th>
-                    <th>House Number</th>
-                    <th>Username</th>
-                    <th>Description</th>
-                    <th>Skills</th>
-                    <th>Actions</th>
-                    <th>Set acces level</th>
-                </tr>
-                </thead>
-                <c:forEach items="${users}" var="user">
-                <tbody>
-                <tr>
-                    <td>${user.id}</td>
-                    <td>${user.firstName}</td>
-                    <td>${user.lastName}</td>
-                    <td>${user.pesel}</td>
-                    <td>${user.email}</td>
-                    <td>${user.phoneNr}</td>
-                    <td>${user.postalCode}</td>
-                    <td>${user.positions.toString()}</td>
-                    <td>${user.street}</td>
-                    <td>${user.streetNr}</td>
-                    <td>${user.houseNr}</td>
-                    <td>${user.username}</td>
-                    <td>${user.description}</td>
-                    <td>${user.skills}</td>
-                    <td>
-                        <a href="<c:url value="/admin/show/${user.id}"/>" class="view" title="View"
-                           data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
-                        <a href="<c:url value="/admin/edit/${user.id}"/>" class="edit" title="Edit"
-                           data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                        <a href="<c:url value="/admin/delete/${user.id}"/>" class="delete" title="Delete"
-                           data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                    </td>
-                    <td>
-                        <a href="<c:url value="/admin/role/set/${user.username}/ROLE_ADMIN"/>" class="href">high</a>
-                        <a href="<c:url value="/admin/role/set/${user.username}/ROLE_SUPERVISOR"/>"
-                           class="href">medium</a>
-                        <a href="<c:url value="/admin/role/set/${user.username}/ROLE_WORKER"/>" class="href">low</a>
-                    </td>
-                    </c:forEach>
-                </tr>
-                <a href="<c:url value="/admin/add"/>">Add new employee</a>
-                </tbody>
-            </table>
-<%--            <div class="clearfix">--%>
-<%--                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>--%>
-<%--                <ul class="pagination">--%>
-<%--                    <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>--%>
-<%--                    <li class="page-item"><a href="#" class="page-link">1</a></li>--%>
-<%--                    <li class="page-item"><a href="#" class="page-link">2</a></li>--%>
-<%--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>--%>
-<%--                    <li class="page-item"><a href="#" class="page-link">4</a></li>--%>
-<%--                    <li class="page-item"><a href="#" class="page-link">5</a></li>--%>
-<%--                    <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a>--%>
-<%--                    </li>--%>
-<%--                </ul>--%>
-<%--            </div>--%>
         </div>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>First name <i class="fa fa-sort"></i></th>
+                <th>Last name</th>
+                <th>PESEL <i class="fa fa-sort"></i></th>
+                <th>Email</th>
+                <th>Phone number <i class="fa fa-sort"></i></th>
+                <th>Postal Code</th>
+                <th>Position</th>
+                <th>Street</th>
+                <th>Street Number</th>
+                <th>House Number</th>
+                <th>Username</th>
+                <th>Description</th>
+                <th>Skills</th>
+                <th>Actions</th>
+                <th>Set acces level</th>
+            </tr>
+            </thead>
+            <c:forEach items="${users}" var="user">
+            <tbody>
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.firstName}</td>
+                <td>${user.lastName}</td>
+                <td>${user.pesel}</td>
+                <td>${user.email}</td>
+                <td>${user.phoneNr}</td>
+                <td>${user.postalCode}</td>
+                <td>
+                    <c:forEach items="${user.positions}" var="item" varStatus="status">
+                        ${item}<c:if test="${!status.last}">,</c:if>
+                    </c:forEach>
+                </td>
+                <td>${user.street}</td>
+                <td>${user.streetNr}</td>
+                <td>${user.houseNr}</td>
+                <td>${user.username}</td>
+                <td>${user.description}</td>
+                <td>
+                    <c:forEach items="${user.skills}" var="item" varStatus="status">
+                        ${item}
+                    <c:if test="${!status.last}">,</c:if>
+                    </c:forEach>
+                <td>
+                    <a href="<c:url value="/admin/show/${user.id}"/>" class="view" title="View"
+                       data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                    <a href="<c:url value="/admin/edit/${user.id}"/>" class="edit" title="Edit"
+                       data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                    <a href="<c:url value="/admin/delete/${user.id}"/>" class="delete" title="Delete"
+                       data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                </td>
+                <td>
+                    <a href="<c:url value="/admin/role/set/${user.username}/ROLE_ADMIN"/>" class="href">high</a>
+                    <a href="<c:url value="/admin/role/set/${user.username}/ROLE_SUPERVISOR"/>"
+                       class="href">medium</a>
+                    <a href="<c:url value="/admin/role/set/${user.username}/ROLE_WORKER"/>" class="href">low</a>
+                </td>
+                </c:forEach>
+            </tr>
+            <a href="<c:url value="/admin/add"/>">Add new employee</a>
+            </tbody>
+        </table>
+        <%--            <div class="clearfix">--%>
+        <%--                <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>--%>
+        <%--                <ul class="pagination">--%>
+        <%--                    <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>--%>
+        <%--                    <li class="page-item"><a href="#" class="page-link">1</a></li>--%>
+        <%--                    <li class="page-item"><a href="#" class="page-link">2</a></li>--%>
+        <%--                    <li class="page-item active"><a href="#" class="page-link">3</a></li>--%>
+        <%--                    <li class="page-item"><a href="#" class="page-link">4</a></li>--%>
+        <%--                    <li class="page-item"><a href="#" class="page-link">5</a></li>--%>
+        <%--                    <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a>--%>
+        <%--                    </li>--%>
+        <%--                </ul>--%>
+        <%--            </div>--%>
     </div>
+</div>
 </div>
 </body>
 </html>

@@ -25,11 +25,19 @@
     </tr>
     <tr>
         <th>Priority</th>
-        <td>${objective.priority}</td>
+        <td>
+            <c:forEach items="${objective.priority}" var="item" varStatus="status">
+                ${item}<c:if test="${!status.last}">,</c:if>
+            </c:forEach>
+        </td>
     </tr>
     <tr>
         <th>Status</th>
-        <td>${objective.taskStatus}</td>
+        <td>
+            <c:forEach items="${objective.taskStatus}" var="item" varStatus="status">
+                ${item}<c:if test="${!status.last}">,</c:if>
+            </c:forEach>
+        </td>
     </tr>
     <tr>
         <th>Description</th>

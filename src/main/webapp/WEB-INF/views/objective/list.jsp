@@ -125,8 +125,16 @@
             <tr>
                 <td>${objective.id}</td>
                 <td>${objective.name}</td>
-                <td>${objective.priority}</td>
-                <td>${objective.taskStatus}</td>
+                <td>
+                    <c:forEach items="${objective.priority}" var="item" varStatus="status">
+                        ${item}<c:if test="${!status.last}">,</c:if>
+                    </c:forEach>
+                </td>
+                <td>
+                    <c:forEach items="${objective.taskStatus}" var="item" varStatus="status">
+                        ${item}<c:if test="${!status.last}">,</c:if>
+                    </c:forEach>
+                </td>
                 <td>${objective.description}</td>
                 <td>${objective.startDate}</td>
                 <td>${objective.endDate}</td>
