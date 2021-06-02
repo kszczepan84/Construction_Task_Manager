@@ -151,6 +151,8 @@
                 </c:forEach>
             </tr>
             <a href="<c:url value="/objective/add"/>">Add new objective</a>
+            <br>
+            <a href="<c:url value="/objective/assign"/>">Assign objective to employee</a>
             </tbody>
         </table>
     </div>

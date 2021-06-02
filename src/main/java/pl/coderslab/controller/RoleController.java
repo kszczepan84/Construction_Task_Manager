@@ -17,12 +17,12 @@ import java.util.HashSet;
 @Controller
 @RequestMapping("/admin/role")
 @RequiredArgsConstructor
-@Transactional
 public class RoleController {
 
     private final RoleRepository roleRepository;
     private final UserService userService;
 
+    @Transactional
     @GetMapping("/set/{username}/{roleName}")
     public String setRoleToUser(@PathVariable String username, @PathVariable String roleName) {
         Role userRole = roleRepository.findByName(roleName);

@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @Primary
-public class JpaUserService implements UserService{
+public class JpaUserService implements UserService {
 
     @Autowired
     private final UserRepository userRepository;
@@ -44,7 +44,6 @@ public class JpaUserService implements UserService{
     }
 
 
-
     @Override
     public List<User> getUsers() {
         return userRepository.findAll();
@@ -60,6 +59,7 @@ public class JpaUserService implements UserService{
     public Optional<User> getUser(Long id) {
         return userRepository.findById(id);
     }
+
 
     @Override
     public void update(User user) {
@@ -79,15 +79,11 @@ public class JpaUserService implements UserService{
 
     @Override
     public void saveUser(User user) {
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
-//        user.setEnabled(1);
-//        Role userRole = roleRepository.findByName("ROLE_USER");
-//        user.setRoles(new HashSet<>(Arrays.asList(userRole)));
-//        userRepository.save(user);
     }
 
     @Override
     public User findByPesel(String pesel) {
         return null;
     }
+
 }

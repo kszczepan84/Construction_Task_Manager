@@ -78,9 +78,14 @@ public class User {
     private Set<Role> roles;
     @ManyToMany
     private List<WorkArea> workAreas;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_objectives",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "objective_id", referencedColumnName = "id"))
     private List<Objective> objectives;
-
 
     public Long getId() {
         return id;
@@ -232,5 +237,14 @@ public class User {
 
     public void setObjectives(List<Objective> objectives) {
         this.objectives = objectives;
+    }
+
+    public String getFullname() {
+        return firstName+" "+lastName;
+    }
+
+    @Override
+    public String toString() {
+        return firstName + " " + lastName;
     }
 }

@@ -23,6 +23,8 @@ public class Objective {
     private LocalDate endDate;
     private LocalTime startHour;
     private LocalTime endHour;
+    @ManyToMany(mappedBy = "objectives")
+    private List<User>users;
 
 
     public Long getId() {
@@ -100,9 +102,6 @@ public class Objective {
 
     @Override
     public String toString() {
-        return "Objective{" +
-                "priority=" + priority +
-                ", taskStatus=" + taskStatus +
-                '}';
+        return name;
     }
 }
