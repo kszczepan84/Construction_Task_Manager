@@ -30,7 +30,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/worker/**").hasAnyRole("SUPERVISOR", "ADMIN", "WORKER")
                 .antMatchers("/supervisor/**").hasAnyRole("SUPERVISOR", "ADMIN")
                 .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/objective/**").permitAll()
+                .antMatchers("/objective/add").hasRole("ADMIN")
+                .antMatchers("/objective/delete").hasRole("ADMIN")
+                .antMatchers("/objective/edit").hasAnyRole("ADMIN","SUPERVISOR")
+                .antMatchers("/objective/list").hasAnyRole("SUPERVISOR", "ADMIN", "WORKER")
+
                 .and()
                 .formLogin()
                 .defaultSuccessUrl("/successLogin", true)

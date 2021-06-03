@@ -32,13 +32,11 @@
                     <li><a href="<c:url value="/"/>">Home</a></li>
                     <li><a href="<c:url value="/login"/>">Login</a></li>
                     <li><a href="javascript: document.logoutForm.submit()">Logout</a></li>
-                    <li><a href="<c:url value="/objective/list"/>">Tasks</a></li>
                     <li><a href="<c:url value="/worker"/>">Worker Site</a></li>
                     <li><a href="<c:url value="/supervisor"/>">Supervisor Site</a></li>
-                    <li><a href="<c:url value="/admin/list"/>">Manager Site</a></li>
+                    <li><a href="<c:url value="/admin"/>">Manager Site</a></li>
                     <li><a href="<c:url value="/about"/>">About</a></li>
 
-                    <%--                    <li><a href="<c:url value="/logout"/>">Logout</a></li>--%>
 
                     <form:form action="${'/logout'}" method="post" hidden="true" name="logoutForm">
                         <input type="submit" value="Logout"/>

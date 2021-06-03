@@ -91,59 +91,6 @@
                 </label>
             </td>
         </tr>
-<%--        A TAK WYGLADA FORMULARZ:--%>
-<%--        <tr>--%>
-<%--            <th>Select access:</th>--%>
-<%--            <td>--%>
-<%--                <label>--%>
-<%--                    <form:select path="roles" items="${roles.getName()}" multiple="false" itemLabel="name" itemValue="name"/>--%>
-<%--                </label>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--                    <tr>--%>
-<%--                        <th>Select access:</th>--%>
-<%--                        <td>--%>
-<%--                            <label class="checkbox">--%>
-<%--                                <form:checkbox class="radio" path="roleAdmin" value="${ROLE_ADMIN}" label="ROLE_ADMIN"/>--%>
-<%--                                <br>--%>
-<%--                                <form:checkbox class="radio" path="ROLE_SUPERVISOR" value="${ROLE_SUPERVISOR}" label="ROLE_SUPERVISOR"/>--%>
-<%--                                <br>--%>
-<%--                                <form:checkbox class="radio" path="ROLE_OPERATOR" value="${ROLE_OPERATOR}" label="ROLE_OPERATOR"/>--%>
-<%--                                <br>--%>
-<%--                            </label>--%>
-<%--                        </td>--%>
-<%--                    </tr>--%>
-
-            <%--        <tr>--%>
-            <%--            <th>Select access:</th>--%>
-            <%--            <td>--%>
-            <%--                <label class="checkbox">--%>
-            <%--                    <form:checkbox class="radio" path="roles" value="${roles.get(0)}" label="ROLE_ADMIN"/>--%>
-            <%--                    <br>--%>
-            <%--                    <form:checkbox class="radio" path="roles" value="${roles.get(1)}" label="ROLE_SUPERVISOR"/>--%>
-            <%--                    <br>--%>
-            <%--                    <form:checkbox class="radio" path="roles" value="${roles.get(2)}" label="ROLE_OPERATOR"/>--%>
-            <%--                    <br>--%>
-            <%--                </label>--%>
-            <%--            </td>--%>
-            <%--        </tr>--%>
-
-
-<%--        <tr>--%>
-<%--            <th>Select access:</th>--%>
-<%--            <td>--%>
-<%--                <label>--%>
-<%--                    <form:radiobutton path="newRole" value="ROLE_ADMIN" label="High (Boss)"/>--%>
-<%--                    <br>--%>
-<%--                    <form:radiobutton path="newRole" value="ROLE_SUPERVISOR" label="Medium (Supervisor)"/>--%>
-<%--                    <br>--%>
-<%--                    <form:radiobutton path="newRole" value="ROLE_OPERATOR" label="Low (Operator)"/>--%>
-<%--                    <br>--%>
-
-<%--                </label>--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-
         <tr>
             <th>Enter street:</th>
             <td>
@@ -228,10 +175,7 @@
             <th style="border: none">
             <td style="border: none">
                 <button type="submit"> Confirm</button>
-                    <%--                <form action="<c:url value="/admin/list"/>">--%>
-                    <%--                    <button type="submit"> Return</button>--%>
-                    <%--                </form>--%>
-                <a href="<c:url value="/admin/list"/>" style="font-size: medium">return</a>
+                <a href="<c:url value="/admin/employee/list"/>" style="font-size: medium">return</a>
 
             </td>
             </th>

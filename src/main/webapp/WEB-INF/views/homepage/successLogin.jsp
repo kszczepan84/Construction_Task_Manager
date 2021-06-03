@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="col-7 ml-4">
-                <h2 class="text-center">You've been successfully logged in!<br>
+                <h2 class="text-center">You've been successfully logged in! Welcome, ${user.fullname}<br>
                 </h2>
             </div>
         </div>

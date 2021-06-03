@@ -38,7 +38,10 @@
             </td>
             <td>
                 <c:forEach items="${usersByObjective}" var="usersByObjective">
-                    ${usersByObjective} - ${usersByObjective.objectives}
+                    ${usersByObjective} -
+                    <c:forEach items="${usersByObjective.objectives}" var="element">
+                        ${element}
+                    </c:forEach>
                     <br>
                 </c:forEach>
             </td>

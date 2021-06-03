@@ -33,7 +33,7 @@ public class RoleController {
             roleRepository.save(userRole);
         }
         user.setRoles(new HashSet<>(Arrays.asList(userRole)));
-        return "redirect:/admin/list";
+        return "redirect:/admin/employee/list";
     }
 
 

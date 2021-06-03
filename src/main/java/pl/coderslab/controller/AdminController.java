@@ -21,21 +21,26 @@ public class AdminController {
     private final UserService userService;
     private final BCryptPasswordEncoder passwordEncoder;
 
-    @RequestMapping("/list")
+    @RequestMapping("")
+    public String main(){
+        return "/admin/main";
+    }
+
+    @RequestMapping("/employee/list")
     public String all(Model model) {
         model.addAttribute("users", userService.getUsers());
         return "/admin/list";
     }
 
 
-    @GetMapping("/add")
+    @GetMapping("/employee/add")
     public String addUser(Model model) {
         model.addAttribute("user", new User());
         return "/admin/add";
     }
 
 
-    @PostMapping("/add")
+    @PostMapping("/employee/add")
     public String saveUser(@Valid User user, BindingResult result) {
         if (result.hasErrors()) {
             return "admin/add";
@@ -43,7 +48,7 @@ public class AdminController {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabled(1);
         userService.addUser(user);
-        return "redirect:/admin/list";
+        return "redirect:/admin/employee/list";
     }
 
     @ModelAttribute("skills")
@@ -57,13 +62,13 @@ public class AdminController {
     }
 
 
-    @GetMapping("/edit/{id}")
+    @GetMapping("/employee/edit/{id}")
     public String redirectToEdit(@PathVariable Long id, Model model) {
-        model.addAttribute("user", userService.getUser(id));
+        model.addAttribute("user", userService.getUser(id).orElse(null));
         return "admin/edit";
     }
 
-    @PostMapping("/edit")
+    @PostMapping("/employee/edit")
     public String edit(@Valid User user, BindingResult result) {
         if (result.hasErrors()) {
             return "admin/edit";
@@ -71,19 +76,19 @@ public class AdminController {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setEnabled(1);
         userService.update(user);
-        return "redirect:/admin/list";
+        return "redirect:/admin/employee/list";
     }
 
-    @GetMapping("/show/{id}")
+    @GetMapping("/employee/show/{id}")
     public String show(@PathVariable Long id, Model model) {
-        model.addAttribute("user", userService.getUser(id));
+        model.addAttribute("user", userService.getUser(id).orElse(null));
         return "admin/show";
     }
 
-    @GetMapping("/delete/{id}")
+    @GetMapping("/employee/delete/{id}")
     public String delete(@PathVariable Long id) {
         userService.delete(id);
-        return "redirect:/admin/list";
+        return "redirect:/admin/employee/list";
     }
 
 

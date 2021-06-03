@@ -15,5 +15,6 @@ public interface ObjectiveService {
     void delete(Long id);
     Objective findByObjectiveName(String name);
     void saveObjective(Objective objective);
+    public List<String> getTaskStatus();
 
 }

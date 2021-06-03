@@ -15,7 +15,7 @@
 </head>
 <c:import url="/WEB-INF/views/homepage/header.jsp"/>
 <body>
-<form:form method="post" modelAttribute="user" action="/admin/edit">
+<form:form method="post" modelAttribute="user" action="/admin/employee/edit">
     <form:hidden path="id" value="${id}"/>
     <table>
         <tr>
@@ -175,7 +175,7 @@
             <th style="border: none">
             <td style="border: none">
                 <button type="submit" > Confirm</button>
-            <a href="<c:url value="/admin/list"/>" style="font-size: medium">return</a>
+            <a href="<c:url value="/admin/employee/list"/>" style="font-size: medium">return</a>
             </td>
 
             </th>

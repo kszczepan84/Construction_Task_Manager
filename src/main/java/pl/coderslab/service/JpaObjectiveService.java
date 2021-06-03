@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.coderslab.entity.Objective;
 import pl.coderslab.repository.ObjectiveRepository;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,6 +56,11 @@ public class JpaObjectiveService implements ObjectiveService {
     @Override
     public void saveObjective(Objective objective) {
 
+    }
+
+    @Override
+    public List<String> getTaskStatus() {
+        return Arrays.asList("Done", "In progress", "Unknown");
     }
 
 

@@ -82,7 +82,7 @@
     <tr>
         <th style="border: none">
         <td style="border: none">
-            <a href="<c:url value="/admin/list"/>" style="font-size: medium">return</a>
+            <a href="<c:url value="/admin/employee/list"/>" style="font-size: medium">return</a>
         </td>
         <%--            <form action="<c:url value="/admin/list"/>">--%>
         <%--                <button type="submit" > Return </button>--%>
