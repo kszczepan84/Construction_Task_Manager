@@ -2,7 +2,6 @@ package pl.coderslab.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +10,7 @@ import pl.coderslab.repository.RoleRepository;
 import pl.coderslab.entity.User;
 import pl.coderslab.service.UserService;
 
+import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.HashSet;
 

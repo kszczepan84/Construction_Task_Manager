@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.entity.Objective;
+import pl.coderslab.entity.User;
 import pl.coderslab.service.ObjectiveService;
 import pl.coderslab.service.UserService;
 
@@ -37,12 +38,18 @@ public class UserController {
 
     @PostMapping("/supervisor")
     @Transactional
-    public String supervisorTaskUpdated(@RequestParam("taskStatusNew") String taskStatusNew,
-                                        @RequestParam("objectiveOldStatus") Long objectiveId) {
+    public String supervisorTaskUpdated(@RequestParam("taskStatusNew") List<String> taskStatusNew,
+                                        @RequestParam("objectiveOldStatus") List<Long> objectiveId) {
+
         Optional<Objective> objective;
-        objective = objectiveService.getObjective(objectiveId);
-        List<String> convertedTask= Arrays.asList(taskStatusNew);
-        objective.orElseThrow(null).setTaskStatus(convertedTask);
+        Integer listLength = taskStatusNew.size();
+        for (int i = 0; i < listLength; i++) {
+            Long id = objectiveId.get(i);
+            String taskStatus = taskStatusNew.get(i);
+            objective = objectiveService.getObjective(id);
+            List<String> convertedTask= Arrays.asList(taskStatus);
+            objective.orElseThrow(null).setTaskStatus(convertedTask);
+        }
         return "redirect:/supervisor";
     }
 }

@@ -21,7 +21,7 @@ public class JpaObjectiveService implements ObjectiveService {
     }
 
     @Override
-    public List<Objective> getObjectives() {
+    public List<Objective> getAllObjectives() {
         return objectiveRepository.findAll();
     }
 

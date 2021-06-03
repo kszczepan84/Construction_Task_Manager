@@ -10,6 +10,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <html>
 <head>
     <title>Assign objective</title>
@@ -37,13 +38,24 @@
                 </select>
             </td>
             <td>
-                <c:forEach items="${usersByObjective}" var="usersByObjective">
-                    ${usersByObjective} -
-                    <c:forEach items="${usersByObjective.objectives}" var="element">
-                        ${element}
+                <c:forEach items="${users}" var="element">
+                    ${element}:
+                    <br>
+                    <c:forEach items="${element.objectives}" var="el">
+                        id: ${el.id} -
+                        <c:choose>
+                            <c:when test="${empty el}">
+                                <c:out value="not assigned any task yet"/>
+                            </c:when>
+                            <c:otherwise>
+                                ${el}
+                            </c:otherwise>
+                        </c:choose>
+                        <br>
                     </c:forEach>
                     <br>
                 </c:forEach>
+                <br>
             </td>
         </tr>
     </table>

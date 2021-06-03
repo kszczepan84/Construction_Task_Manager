@@ -19,49 +19,62 @@
 <form method="post" action="/supervisor">
 
 
-<body>
-<table>
-    <tr>
-        <th> Assigned task for ${user}:</th>
-    </tr>
-    <tr>
-        <td>
+    <body>
+    <table>
+        <tr>
+            <th> Assigned task for ${user}:</th>
+        </tr>
+        <tr>
+            <td>
 
-            <c:forEach items="${user.objectives}" var="item" varStatus="status">
-                <input  name="objectiveOldStatus" type="hidden" value="${item.id}">
-                ${item.name}
-            <br>
-                ${item.description}
-            <br>
-            From:
-                ${item.startDate} ${item.startHour}
-            <br>
-            Till:
-                ${item.endDate} ${item.endHour}
-            <br>
-            Objective status:
-            <br>
-            <c:forEach items="${item.taskStatus}" var="element">
-                ${element}
-        <th>Edit status:</th>
-        <td>
-            <label>
-                <select name="taskStatusNew">
-                    działa
-                    <c:forEach items="${taskStatusAll}" var="taskStatus">
-                        <option> ${taskStatus}</option>
+                <c:forEach items="${user.objectives}" var="item" varStatus="status">
+                    <input name="objectiveOldStatus" type="hidden" value="${item.id}">
+                    ${item.name}
+                    <br>
+                    ${item.description}
+                    <br>
+                    From:
+                    ${item.startDate} ${item.startHour}
+                    <br>
+                    Till:
+                    ${item.endDate} ${item.endHour}
+                    <br>
+                    Objective status:
+                    <br>
+                    <c:forEach items="${item.taskStatus}" var="el">
+                        ${el}
+                        <br>
                     </c:forEach>
-                </select>
-            </label>
-        </td>
+                    <br>
+                    <select name="taskStatusNew">
+                        <c:forEach items="${taskStatusAll}" var="taskStatus">
+                            <option> ${taskStatus}</option>
+                        </c:forEach>
+                    </select>
+                    <br>
+                    ----------------------------
+                    <br>
+                </c:forEach>
 
-        </c:forEach>
-        <button type="submit"> Confirm</button>
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        <c:if test="${!status.last}">,</c:if>
-        </c:forEach>
-</table>
-<a href="<c:url value="/"/>">return to homepage</a>
+            </td>
+        </tr>
+        <%--        <tr>--%>
+        <%--            <td>--%>
+        <%--                <select name="taskStatusNew">--%>
+        <%--                    działa--%>
+        <%--                    <c:forEach items="${taskStatusAll}" var="taskStatus">--%>
+        <%--                    <option> ${taskStatus}</option>--%>
+        <%--                    </c:forEach>--%>
+        <%--            </td>--%>
+        <%--        </tr>--%>
+        <%--        <tr>--%>
+        <td>
+            <button type="submit"> Confirm</button>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        </td>
+        </tr>
+    </table>
+    <a href="<c:url value="/"/>">return to homepage</a>
+    </body>
 </form>
-</body>
 </html>

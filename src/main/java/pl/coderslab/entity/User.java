@@ -9,6 +9,7 @@ import pl.coderslab.validator.UniquePesel;
 import pl.coderslab.validator.UniqueUsername;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -68,7 +69,7 @@ public class User {
     private String description;
     private int enabled;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(
@@ -78,7 +79,8 @@ public class User {
     private Set<Role> roles;
     @ManyToMany
     private List<WorkArea> workAreas;
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @ManyToMany
     @JoinTable(
             name = "users_objectives",
             joinColumns = @JoinColumn(

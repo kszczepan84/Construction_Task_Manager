@@ -1,5 +1,6 @@
 package pl.coderslab.service;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import pl.coderslab.entity.User;
 import pl.coderslab.validator.FieldValueExists;
@@ -8,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Primary
 public interface UserService extends FieldValueExists {
 
     List<User> getUsers();

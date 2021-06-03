@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +16,7 @@ import pl.coderslab.service.UserService;
 
 
 import javax.servlet.http.HttpServletRequest;
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Arrays;
@@ -36,7 +36,7 @@ public class ObjectiveController {
 
     @RequestMapping("/list")
     public String all(Model model) {
-        model.addAttribute("objectives", objectiveService.getObjectives());
+        model.addAttribute("objectives", objectiveService.getAllObjectives());
         return "/objective/list";
     }
 
@@ -107,8 +107,8 @@ public class ObjectiveController {
     @GetMapping("/assign")
     public String assignObjective(HttpServletRequest request) {
         request.setAttribute("users", userService.getUsers());
-        request.setAttribute("objectives", objectiveService.getObjectives());
-        request.setAttribute("usersByObjective",userRepository.selectUserByObjective());
+        request.setAttribute("objectives", objectiveService.getAllObjectives());
+//        request.setAttribute("usersByObjective",userRepository.selectUserByObjective());
         return "/objective/assign";
     }
 
@@ -116,11 +116,22 @@ public class ObjectiveController {
     @Transactional
     public String assignObjectivePost(@RequestParam("users") Long userId,
                                       @RequestParam("objectives") Long objectiveId) {
+//        Optional<User> user;
+//        user = userService.getUser(userId);
+//        Optional<Objective> objective;
+//        objective = objectiveService.getObjective(objectiveId);
+//        user.orElseThrow(null).setObjectives(Arrays.asList(objective.orElse(null)));
+
         Optional<User> user;
         user = userService.getUser(userId);
+        List<Objective> list= user.orElseThrow(null).getObjectives();
         Optional<Objective> objective;
         objective = objectiveService.getObjective(objectiveId);
-        user.orElseThrow(null).setObjectives(Arrays.asList(objective.orElse(null)));
+        if(!list.contains(objective.orElse(null))){
+            list.add(objective.orElse(null));
+            user.orElseThrow(null).setObjectives(list);
+            System.out.println(user.orElse(null).getObjectives());
+        }
         return "redirect:/objective/assign";
     }
 

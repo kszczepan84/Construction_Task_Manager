@@ -10,9 +10,10 @@ import pl.coderslab.entity.User;
 import pl.coderslab.service.UserService;
 
 
+import javax.transaction.Transactional;
 import java.util.HashSet;
 import java.util.Set;
-
+@Transactional
 public class SpringDataUserDetailsService  implements UserDetailsService {
 
     private UserService userService;
