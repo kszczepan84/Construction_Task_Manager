@@ -89,6 +89,25 @@ public class User {
                     name = "objective_id", referencedColumnName = "id"))
     private List<Objective> objectives;
 
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @ManyToMany
+    @JoinTable(
+            name = "users_messages",
+            joinColumns = @JoinColumn(
+                    name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "message_id", referencedColumnName = "id"))
+    private List<Message> messages;
+
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+
     public Long getId() {
         return id;
     }

@@ -34,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/objective/delete").hasRole("ADMIN")
                 .antMatchers("/objective/edit").hasAnyRole("ADMIN","SUPERVISOR")
                 .antMatchers("/objective/list").hasAnyRole("SUPERVISOR", "ADMIN", "WORKER")
+                .antMatchers("/message/**").hasAnyRole("SUPERVISOR", "ADMIN", "WORKER")
 
                 .and()
                 .formLogin()
