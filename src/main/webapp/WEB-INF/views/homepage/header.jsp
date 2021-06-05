@@ -32,7 +32,8 @@
                     <li><a href="<c:url value="/"/>">Home</a></li>
                     <li><a href="<c:url value="/login"/>">Login</a></li>
                     <li><a href="javascript: document.logoutForm.submit()">Logout</a></li>
-                    <li><a href="<c:url value="/message/send"/>">Chat</a></li>
+                    <li><a href="<c:url value="/message/send"/>">Notes</a></li>
+                    <li><a href="<c:url value="/chat"/>">Chat</a></li>
                     <li><a href="<c:url value="/worker"/>">Worker Site</a></li>
                     <li><a href="<c:url value="/supervisor"/>">Supervisor Site</a></li>
                     <li><a href="<c:url value="/admin"/>">Manager Site</a></li>

@@ -35,7 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/objective/edit").hasAnyRole("ADMIN","SUPERVISOR")
                 .antMatchers("/objective/list").hasAnyRole("SUPERVISOR", "ADMIN", "WORKER")
                 .antMatchers("/message/**").hasAnyRole("SUPERVISOR", "ADMIN", "WORKER")
-
+                .antMatchers("/chat/**").hasAnyRole("SUPERVISOR", "ADMIN", "WORKER")
                 .and()
                 .formLogin()
                 .defaultSuccessUrl("/successLogin", true)

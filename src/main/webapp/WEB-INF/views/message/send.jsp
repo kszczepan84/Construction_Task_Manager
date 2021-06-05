@@ -35,7 +35,7 @@
                     ${user} has written:
                     <br>
                     <c:forEach items="${user.messages}" var="message">
-                        -> ${message}
+                        -> ${message} <a href="<c:url value="/message/delete/${message.id}"/>">x</a>
                         <br>
                     </c:forEach>
                     <br>

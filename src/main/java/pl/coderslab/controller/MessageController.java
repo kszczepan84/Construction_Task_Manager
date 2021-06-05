@@ -5,9 +5,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.coderslab.entity.Message;
 import pl.coderslab.entity.User;
 import pl.coderslab.repository.MessageRepository;
@@ -18,6 +16,7 @@ import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/message")
@@ -52,6 +51,14 @@ public class MessageController {
         allUserMessages.add(message);
         user.setMessages(allUserMessages);
         message.setUsers(Arrays.asList(user));
+        return "redirect:/message/send";
+    }
+
+    @GetMapping("/delete/{id}")
+    @Transactional
+    public String delete(@PathVariable Long id) {
+        messageRepository.deleteMessageFromUsersMesagesbyMesageId(id);
+        messageService.delete(id);
         return "redirect:/message/send";
     }
 }
