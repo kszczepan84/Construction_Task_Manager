@@ -2,6 +2,7 @@ package pl.coderslab.repository;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import pl.coderslab.entity.User;
@@ -18,6 +19,10 @@ public interface UserRepository extends JpaRepository<User,Long> {
 
     @Query(value="SELECT u.id, u.description, email, enabled, first_name, house_nr, last_name, password, pesel, phone_nr, postal_code, street, street_nr, username, fullname FROM user u INNER JOIN users_objectives uo on u.id = uo.user_id INNER JOIN objective o on uo.objective_id = o.id WHERE objective_id IS NOT NULL",nativeQuery=true)
     List<User> selectUserByObjective();
+
+    @Modifying
+    @Query(value="DELETE FROM users_roles WHERE  user_id =?1",nativeQuery = true)
+    void deleteRoleFromUsersRolesbyUserId(Long id);
 
 //    @Query(value="SELECT ALL user_id FROM users_objectives WHERE objective_id is not null", nativeQuery = true)
 //    List<Long> findUserWhenObjectivesExist();

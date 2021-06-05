@@ -3,10 +3,12 @@ package pl.coderslab.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.entity.User;
+import pl.coderslab.repository.UserRepository;
 import pl.coderslab.service.UserService;
 
 import javax.validation.Valid;
@@ -20,9 +22,10 @@ public class AdminController {
 
     private final UserService userService;
     private final BCryptPasswordEncoder passwordEncoder;
+    private final UserRepository userRepository;
 
     @RequestMapping("")
-    public String main(){
+    public String main() {
         return "/admin/main";
     }
 
@@ -86,7 +89,9 @@ public class AdminController {
     }
 
     @GetMapping("/employee/delete/{id}")
+    @Transactional
     public String delete(@PathVariable Long id) {
+        userRepository.deleteRoleFromUsersRolesbyUserId(id);
         userService.delete(id);
         return "redirect:/admin/employee/list";
     }

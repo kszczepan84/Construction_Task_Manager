@@ -37,11 +37,11 @@
             <thead>
             <tr>
                 <th>Id</th>
-                <th>First name <i class="fa fa-sort"></i></th>
+                <th>First name</th>
                 <th>Last name</th>
-                <th>PESEL <i class="fa fa-sort"></i></th>
+                <th>PESEL</th>
                 <th>Email</th>
-                <th>Phone number <i class="fa fa-sort"></i></th>
+                <th>Phone number</th>
                 <th>Postal Code</th>
                 <th>Position</th>
                 <th>Street</th>
@@ -51,6 +51,7 @@
                 <th>Description</th>
                 <th>Skills</th>
                 <th>Actions</th>
+                <th>Access lvl</th>
                 <th>Set acces level</th>
             </tr>
             </thead>
@@ -88,6 +89,12 @@
                        data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                 </td>
                 <td>
+                    <c:forEach items="${user.roles}" var="item" varStatus="status">
+                        ${item}
+                        <c:if test="${!status.last}">,</c:if>
+                    </c:forEach>
+                </td>
+                <td>
                     <a href="<c:url value="/admin/role/set/${user.username}/ROLE_ADMIN"/>" class="href">high</a>
                     <a href="<c:url value="/admin/role/set/${user.username}/ROLE_SUPERVISOR"/>"
                        class="href">medium</a>
@@ -95,7 +102,6 @@
                 </td>
                 </c:forEach>
             </tr>
-<%--            <a href="<c:url value="/objective/list"/>"><img src="/task.png"></a>--%>
 
             </tbody>
         </table>

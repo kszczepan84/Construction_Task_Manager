@@ -1,97 +1,118 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: krzysztof
-  Date: 20.05.2021
-  Time: 10:49
-  To change this template use File | Settings | File Templates.
---%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="<c:url value="/style.css"/>">
-    <title>Worker details</title>
+    <title>Employee details</title>
+    <%--    <link rel="stylesheet" type="text/css" href="/style.css">--%>
+
 </head>
 <c:import url="/WEB-INF/views/homepage/header.jsp"/>
 <body>
-<table>
-    <tr>
-        <th>Id</th>
-        <td><c:out value="${user.id}"/></td>
-    </tr>
-    <tr>
-        <th>First name</th>
-        <td>${user.firstName}</td>
-    </tr>
-    <tr>
-        <th>Last name</th>
-        <td>${user.lastName}</td>
-    </tr>
-    <tr>
-        <th>PESEL</th>
-        <td>${user.pesel}</td>
-    </tr>
-    <tr>
-        <th>email</th>
-        <td>${user.email}</td>
-    </tr>
-    <tr>
-        <th>phone number</th>
-        <td>${user.phoneNr}</td>
-    </tr>
-    <tr>
-        <th>postal code</th>
-        <td>${user.postalCode}</td>
-    </tr>
-    <tr>
-        <th>position</th>
-        <td>
-            <c:forEach items="${user.positions}" var="item" varStatus="status">
-                ${item}<c:if test="${!status.last}">,</c:if>
-            </c:forEach>
-        </td>
-    </tr>
-    <tr>
-        <th>street</th>
-        <td>${user.street}</td>
-    </tr>
-    <tr>
-        <th>street number</th>
-        <td>${user.streetNr}</td>
-    </tr>
-    <tr>
-        <th>house number</th>
-        <td>${user.houseNr}</td>
-    </tr>
-    <tr>
-        <th>username</th>
-        <td>${user.username}</td>
-    </tr>
-    <tr>
-        <th>description</th>
-        <td>${user.description}</td>
-    </tr>
-    <tr>
-        <th>skills</th>
-        <td>
-            <c:forEach items="${user.skills}" var="item" varStatus="status">
-                ${item}<c:if test="${!status.last}">,</c:if>
-            </c:forEach>
-        </td>
-    </tr>
-    <tr>
-        <th style="border: none">
-        <td style="border: none">
-            <a href="<c:url value="/admin/employee/list"/>" style="font-size: medium">return</a>
-        </td>
-        <%--            <form action="<c:url value="/admin/list"/>">--%>
-        <%--                <button type="submit" > Return </button>--%>
-        <%--            </form>--%>
 
-        </th>
-    </tr>
+<div class="container">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-8"><h2>Employee <b>Details</b></h2></div>
+                </div>
+            </div>
+        </div>
 
-</table>
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th>First name</th>
+                <td> ${user.firstName}</td>
+            </tr>
+            <tr>
+                <th>Last name</th>
+                <td> ${user.lastName}</td>
+            </tr>
+            <tr>
+                <th>PESEL</th>
+                <td> ${user.pesel}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td> ${user.email}</td>
+            </tr>
+            <tr>
+                <th>Phone number</th>
+                <td> ${user.phoneNr}</td>
+            </tr>
+            <tr>
+                <th>Postal Code</th>
+                <td> ${user.postalCode}</td>
+            </tr>
+            <tr>
+                <th>Position</th>
+                <td >
+                    <c:forEach items="${user.positions}" var="item" varStatus="status">
+                        <ul>
+                            <li>
+                                    ${item}
+                                <c:if test="${!status.last}">,</c:if>
+                            </li>
+
+                        </ul>
+                    </c:forEach>
+                </td>
+            </tr>
+            <tr>
+                <th>Street</th>
+                <td> ${user.street}</td>
+            </tr>
+            <tr>
+                <th>Street Number</th>
+                <td> ${user.streetNr}</td>
+            </tr>
+            <tr>
+                <th>House Number</th>
+                <td> ${user.houseNr}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td> ${user.username}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td> ${user.description}</td>
+            </tr>
+            <tr>
+                <th>Skills</th>
+                <td>
+                    <c:forEach items="${user.skills}" var="item" varStatus="status">
+                        <ul>
+                            <li>
+                                    ${item}
+                                <c:if test="${!status.last}">,</c:if>
+                            </li>
+
+                        </ul>
+                    </c:forEach>
+                </td>
+            </tr>
+
+        </table>
+        <form action="${pageContext.request.contextPath}/admin/employee/list">
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4"><br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <button type="submit" class="btn btn-warning">
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRETURN <span
+                            class="glyphicon glyphicon-share-alt"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    </button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
 
 </body>
 </html>
+
