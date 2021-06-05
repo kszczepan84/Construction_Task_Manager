@@ -18,26 +18,40 @@
         });
     </script>
     <link rel="stylesheet" href="<c:url value="/crud.css"/>">
+    <link rel="stylesheet" href="<c:url value="/image.css"/>">
 </head>
 <c:import url="/WEB-INF/views/homepage/header.jsp"/>
 <body>
 <div class="container">
-    <div class="table-responsive">
-        <div class="table-wrapper">
-            <div class="table-title">
-                <div class="row">
-                    <div class="col-sm-8"><h2>Welcome! Choose action:</h2></div>
-                </div>
+    <%--    <div class="table-responsive">--%>
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8"><h2>Welcome! Choose action:</h2></div>
             </div>
         </div>
-        <table class="table table-striped table-hover table-bordered">
-            <thead>
-            <a href="<c:url value="/admin/employee/list"/>">Manage employees</a>
-            <br>
-            <a href="<c:url value="/objective/list"/>">Manage tasks</a>
-            </tbody>
-        </table>
     </div>
+    <table class=" table-striped table-hover table-bordered">
+        <thead>
+        <td>
+            <p style="text-align: center">
+                Manage employees
+            </p>
+            <p>
+                <a href="<c:url value="/admin/employee/list"/>"><img src="/employees.png"></a>
+            </p>
+        </td>
+        <td>
+            <p style="text-align: center">
+                Manage tasks
+            </p>
+            <p>
+                <a href="<c:url value="/objective/list"/>"><img src="/task.png"></a>
+            </p>
+        </td>
+        </tbody>
+    </table>
+</div>
 </div>
 </div>
 </body>

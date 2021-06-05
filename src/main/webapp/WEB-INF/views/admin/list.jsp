@@ -18,6 +18,7 @@
         });
     </script>
     <link rel="stylesheet" href="<c:url value="/crud.css"/>">
+    <link rel="stylesheet" href="<c:url value="/image.css"/>">
 </head>
 <c:import url="/WEB-INF/views/homepage/header.jsp"/>
 <body>
@@ -27,9 +28,11 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-8"><h2>Employees <b>List</b></h2></div>
+                    <div class="col-sm-8"><h5> <a href="<c:url value="/admin/employee/add"/>"><img src="/add_employee.png" alt="add" title="Add" data-toggle="tooltip" class="addEmployee"></a></h5></div>
                 </div>
             </div>
         </div>
+
         <table class="table table-striped table-hover table-bordered">
             <thead>
             <tr>
@@ -92,7 +95,8 @@
                 </td>
                 </c:forEach>
             </tr>
-            <a href="<c:url value="/admin/employee/add"/>">Add new employee</a>
+<%--            <a href="<c:url value="/objective/list"/>"><img src="/task.png"></a>--%>
+
             </tbody>
         </table>
     </div>
