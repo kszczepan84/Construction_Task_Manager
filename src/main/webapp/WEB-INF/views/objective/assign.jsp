@@ -125,5 +125,5 @@
 
 
 </body>
-<c:import url="/WEB-INF/views/homepage/footer.jsp"/>
+<%--<c:import url="/WEB-INF/views/homepage/footer.jsp"/>--%>
 </html>

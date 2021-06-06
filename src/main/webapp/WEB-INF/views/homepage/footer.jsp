@@ -5,7 +5,7 @@
 
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2021 Copyright:
-        Krzysztof Szczepański - <a href="http://localhost:8080/"> ConstrutionTaskManager.pl</a>
+        Krzysztof Szczepański - <a href="http://localhost:8080/"> ConstructionTaskManager.pl</a>
     </div>
     <!-- Copyright -->
 

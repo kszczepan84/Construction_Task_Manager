@@ -36,7 +36,12 @@
             <th><h4><b>Your tasks for today:</b></h4></th>
             <th><h4><b>Supervisor contact info:</b></h4></th>
         </tr>
+        <br>
+        <br>
+        <br>
+
         <tr>
+
             <td>
                 <div class="form-group">
                     <c:forEach items="${user.objectives}" var="item" varStatus="status">

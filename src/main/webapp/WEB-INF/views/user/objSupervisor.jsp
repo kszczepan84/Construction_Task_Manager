@@ -71,37 +71,44 @@
                 </div>
 
             </tr>
-            <table>
-                <tr>
-                    <td>
-                        <div class="form-group">
-                            <label class="col-md-4 control-label"></label>
-                            <div class="col-md-4"><br>
-                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                <button type="submit" class="btn btn-success">
-                                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT
-                                    <span
-                                            class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                </button>
+        </table>
+        <table style="width:50%;float:left">
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label"></label>
+                        <div class="col-md-4"><br>
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <button type="submit" class="btn btn-success">
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT
+                                <span
+                                        class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            </button>
 
-                            </div>
                         </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </form>
-    <td>
-        <form action="${pageContext.request.contextPath}/">
-            <div class="form-group">
-                <label class="col-md-4 control-label"></label>
-                <div class="col-md-4"><br>
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <button type="submit" class="btn btn-warning">
-                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRETURN <span
-                            class="glyphicon glyphicon-share-alt"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    </button>
+    <table style="width:50%;float:left">
+        <td>
+            <form action="${pageContext.request.contextPath}/">
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4"><br>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        <button type="submit" class="btn btn-warning">
+                            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRETURN <span
+                                class="glyphicon glyphicon-share-alt"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </form>
-    </td>
+            </form>
+        </td>
+    </table>
+
 
 
 </div>
