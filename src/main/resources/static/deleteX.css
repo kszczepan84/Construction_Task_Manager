@@ -1,0 +1,12 @@
+.deleteX {
+    /*background-color: #f44336;*/
+    color: #ff0000;
+    /*padding: 1px 1px;*/
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: #c70000;
+}

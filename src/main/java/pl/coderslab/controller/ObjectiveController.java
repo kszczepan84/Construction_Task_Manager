@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.entity.Objective;
 import pl.coderslab.entity.User;
+import pl.coderslab.repository.ObjectiveRepository;
 import pl.coderslab.repository.UserRepository;
 import pl.coderslab.service.ObjectiveService;
 import pl.coderslab.service.UserService;
@@ -33,6 +34,7 @@ public class ObjectiveController {
     private final ObjectiveService objectiveService;
     private final UserService userService;
     private final UserRepository userRepository;
+    private final ObjectiveRepository objectiveRepository;
 
     @RequestMapping("/list")
     public String all(Model model) {
@@ -87,7 +89,9 @@ public class ObjectiveController {
     }
 
     @GetMapping("/delete/{id}")
+    @Transactional
     public String delete(@PathVariable Long id) {
+        objectiveRepository.deleteObjectiveFromUsersObjectivesbyObjectiveId(id);
         objectiveService.delete(id);
         return "redirect:/objective/list";
     }
@@ -132,6 +136,14 @@ public class ObjectiveController {
             user.orElseThrow(null).setObjectives(list);
             System.out.println(user.orElse(null).getObjectives());
         }
+        return "redirect:/objective/assign";
+    }
+
+    @GetMapping("/assign/delete/{userId}/{objectiveId}")
+    @Transactional
+//    @ResponseBody
+    public String deleteObjectiveFromUser(@PathVariable Long userId,@PathVariable Long objectiveId) {
+        objectiveRepository.deleteObjectiveFromUser(userId,objectiveId);
         return "redirect:/objective/assign";
     }
 
