@@ -4,8 +4,6 @@
 <html>
 <head>
     <title>Employee details</title>
-    <%--    <link rel="stylesheet" type="text/css" href="/style.css">--%>
-
 </head>
 <c:import url="/WEB-INF/views/homepage/header.jsp"/>
 <body>
@@ -96,7 +94,7 @@
             </tr>
 
         </table>
-        <form action="${pageContext.request.contextPath}/admin/employee/list">
+        <form action="/admin/employee/list">
             <div class="form-group">
                 <label class="col-md-4 control-label"></label>
                 <div class="col-md-4"><br>

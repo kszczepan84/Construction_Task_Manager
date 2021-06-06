@@ -13,3 +13,12 @@ img {
     position: absolute;
 
 }
+
+.addTask
+{
+    height: 30px;  /*height of icon */
+    width: 30px;  /*width of icon */
+    /*position: absolute;*/
+    display: inline-flex;
+
+}

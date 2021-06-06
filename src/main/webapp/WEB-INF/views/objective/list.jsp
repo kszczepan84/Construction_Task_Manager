@@ -18,6 +18,7 @@
         });
     </script>
     <link rel="stylesheet" href="<c:url value="/crud.css"/>">
+    <link rel="stylesheet" href="<c:url value="/image.css"/>">
 </head>
 <c:import url="/WEB-INF/views/homepage/header.jsp"/>
 <body>
@@ -27,6 +28,16 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-8"><h2>Objectives <b>List</b></h2></div>
+                    <div class="col-sm-8"><h5><a href="<c:url value="/objective/add"/>"><img src="/add_task.png"
+                                                                                             alt="add"
+                                                                                             title="Add objective"
+                                                                                             data-toggle="tooltip"
+                                                                                             class="addTask"></a>
+                        <a href="<c:url value="/objective/assign"/>"><img src="/assign_objective.png" alt="add"
+                                                                          title="Assing employee to objective"
+                                                                          data-toggle="tooltip" class="addTask"></a>
+                    </h5>
+                    </div>
                 </div>
             </div>
         </div>
@@ -35,9 +46,9 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Priority <i class="fa fa-sort"></i></th>
+                <th>Priority</th>
                 <th>Status</th>
-                <th>Description<i class="fa fa-sort"></i></th>
+                <th>Description</th>
                 <th>Start date</th>
                 <th>End date</th>
                 <th>Start hour</th>
@@ -75,9 +86,6 @@
                 </td>
                 </c:forEach>
             </tr>
-            <a href="<c:url value="/objective/add"/>">Add new objective</a>
-            <br>
-            <a href="<c:url value="/objective/assign"/>">Assign objective to employee</a>
             </tbody>
         </table>
     </div>

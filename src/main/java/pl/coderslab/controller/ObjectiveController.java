@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.entity.Objective;
 import pl.coderslab.entity.User;
+import pl.coderslab.repository.ObjectiveRepository;
 import pl.coderslab.repository.UserRepository;
 import pl.coderslab.service.ObjectiveService;
 import pl.coderslab.service.UserService;
@@ -33,6 +34,7 @@ public class ObjectiveController {
     private final ObjectiveService objectiveService;
     private final UserService userService;
     private final UserRepository userRepository;
+    private final ObjectiveRepository objectiveRepository;
 
     @RequestMapping("/list")
     public String all(Model model) {
@@ -87,7 +89,9 @@ public class ObjectiveController {
     }
 
     @GetMapping("/delete/{id}")
+    @Transactional
     public String delete(@PathVariable Long id) {
+        objectiveRepository.deleteObjectiveFromUsersObjectivesbyObjectiveId(id);
         objectiveService.delete(id);
         return "redirect:/objective/list";
     }
