@@ -14,11 +14,14 @@
 	
 </head>
 <c:import url="/WEB-INF/views/homepage/header.jsp"/>
+
 <body>
 
 <div class="jumbotron">
  	<h2 class="text-center">Construction Task Manager</h2>
-	<p class="text-center"> kind of software</p>
+	<p class="text-center"> Number one in managing manpower on construction site!</p>
 </div>
+
 </body>
+<c:import url="/WEB-INF/views/homepage/footer.jsp"/>
 </html>

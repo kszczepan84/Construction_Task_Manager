@@ -77,4 +77,5 @@
     <a href="<c:url value="/"/>">return to homepage</a>
     </body>
 </form>
+<c:import url="/WEB-INF/views/homepage/footer.jsp"/>
 </html>

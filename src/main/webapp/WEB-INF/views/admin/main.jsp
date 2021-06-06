@@ -40,4 +40,5 @@
     </table>
 </div>
 </body>
+<c:import url="/WEB-INF/views/homepage/footer.jsp"/>
 </html>

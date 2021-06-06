@@ -53,5 +53,6 @@
     </table>
     <a href="<c:url value="/"/>">return to homepage</a>
     </body>
+    <c:import url="/WEB-INF/views/homepage/footer.jsp"/>
 </form:form>
 </html>

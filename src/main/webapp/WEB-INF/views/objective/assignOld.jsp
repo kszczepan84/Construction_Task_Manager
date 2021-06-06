@@ -64,4 +64,5 @@
     <a href="<c:url value="/objective/list"/>">return</a>
 </form>
 </body>
+<c:import url="/WEB-INF/views/homepage/footer.jsp"/>
 </html>

@@ -17,6 +17,7 @@
     <%--        <link rel="stylesheet" type="text/css" href="/style.css">--%>
 </head>
 <c:import url="/WEB-INF/views/homepage/header.jsp"/>
+<link rel="stylesheet" type="text/css" href="/center.css">
 
 <body>
 <div class="container">
@@ -30,23 +31,25 @@
     <form method="post" action="/supervisor">
         <table class="table table-striped table-hover table-bordered table-responsive">
             <tr>
-                <th> Assigned task for ${user}:</th>
+                <th colspan="10"> Assigned task for ${user}:</th>
             </tr>
 
             <tr>
-                <td>
-                    <div class="form-group">
-                        <c:forEach items="${user.objectives}" var="item" varStatus="status">
+
+                <div class="form-group">
+                    <c:forEach items="${user.objectives}" var="item" varStatus="status">
+                        <td>
                             <input name="objectiveOldStatus" type="hidden" value="${item.id}">
-                            ${item.name}
+
+                                ${item.name}
                             <br>
-                            ${item.description}
+                                ${item.description}
                             <br>
                             From:
-                            ${item.startDate} ${item.startHour}
+                                ${item.startDate} ${item.startHour}
                             <br>
                             Till:
-                            ${item.endDate} ${item.endHour}
+                                ${item.endDate} ${item.endHour}
                             <br>
                             Objective status:
                             <br>
@@ -61,13 +64,14 @@
                                 </c:forEach>
                             </select>
                             <br>
-                            ----------------------------
-                            <br>
-                        </c:forEach>
-                    </div>
-                </td>
+                        </td>
+
+                        <br>
+                    </c:forEach>
+                </div>
+
             </tr>
-            <table class="center">
+            <table>
                 <tr>
                     <td>
                         <div class="form-group">
@@ -103,5 +107,5 @@
 </div>
 
 </body>
-
+<c:import url="/WEB-INF/views/homepage/footer.jsp"/>
 </html>

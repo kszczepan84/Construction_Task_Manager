@@ -35,6 +35,6 @@
     </div>
 </section>
 
-
+<c:import url="/WEB-INF/views/homepage/footer.jsp"/>
 </body>
 </html>
