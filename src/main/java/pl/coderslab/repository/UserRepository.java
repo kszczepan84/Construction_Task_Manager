@@ -30,18 +30,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query(value = "SELECT * FROM user WHERE id=?1", nativeQuery = true)
     User findUserById(Long id);
 
-//    @Query(value="SELECT ALL user_id FROM users_objectives WHERE objective_id is not null", nativeQuery = true)
-//    List<Long> findUserWhenObjectivesExist();
-//
-//    @Query(value="SELECT ALL objective_id FROM users_objectives WHERE user_id=?1 ", nativeQuery = true)
-//    List<Long> findObjectiveWhenObjectivesExist(Long id);
-
-//    @Query(value="SELECT DISTINCT u.first_name FROM user u INNER JOIN users_objectives uo on u.id = uo.user_id INNER JOIN objective o on uo.objective_id = o.id WHERE user_id IS NOT NULL", nativeQuery = true)
-//    List<String> findUserFirstNameWhenObjectivesExist();
-//
-//    @Query(value="SELECT DISTINCT u.last_name FROM user u INNER JOIN users_objectives uo on u.id = uo.user_id INNER JOIN objective o on uo.objective_id = o.id WHERE user_id IS NOT NULL", nativeQuery = true)
-//    List<String> findUserLastNameWhenObjectivesExist();
-//
-//    @Query(value="SELECT DISTINCT o.name FROM user u INNER JOIN users_objectives uo on u.id = uo.user_id INNER JOIN objective o on uo.objective_id = o.id WHERE user_id IS NOT NULL", nativeQuery = true)
-//    List<String> findObjectNameWhenObjectivesExist();
 }
