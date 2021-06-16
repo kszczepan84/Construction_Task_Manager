@@ -1,25 +1,3 @@
-<%--&lt;%&ndash;--%>
-<%--  Created by IntelliJ IDEA.--%>
-<%--  User: krzysztof--%>
-<%--  Date: 27.05.2021--%>
-<%--  Time: 11:51--%>
-<%--  To change this template use File | Settings | File Templates.--%>
-<%--&ndash;%&gt;--%>
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>Access denied</title>--%>
-<%--</head>--%>
-<%--<c:import url="/WEB-INF/views/homepage/header.jsp"/>--%>
-<%--<body>--%>
-<%--<h1>Internal error</h1>--%>
-<%--Server has encountered internal error. For further details please contact with admin admin@admin@.com--%>
-<%--<br>--%>
-<%--</body>--%>
-<%--</html>--%>
-
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/WEB-INF/views/homepage/header.jsp"/>
